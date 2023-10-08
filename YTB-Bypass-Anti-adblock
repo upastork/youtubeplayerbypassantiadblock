@@ -1,0 +1,19 @@
+<html lang="en-US"><head>
+<title>Youtube Player Bypass Anti-Adblock</title>
+
+</head>
+<body style="background-color: gray;">
+    <p>URL: <input id="url"><button onclick="changeIframe()">Submit</button></p>
+<iframe id="youtubeplayer" width="1366" height="768" src="about:blank" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<script type="text/javascript">
+function changeIframe() {
+    var code=document.getElementById('url').value;
+	code = code.substring(code.indexOf("=") + 1);
+	if (code.indexOf("&") > 0) {
+		code = code.substring(0,code.indexOf("&"));
+	};
+    document.getElementById('youtubeplayer').src = "https://www.youtube.com/embed/"+code;
+}
+</script>
+</body></html>
